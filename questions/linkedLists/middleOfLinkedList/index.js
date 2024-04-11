@@ -9,25 +9,23 @@
  * 
  */
 
- const middle = (head) => {
+const middle = (head) => {
+    let slowPointer = head
+    let fastPointer = head
+    while (fastPointer && fastPointer.next) {
+        slowPointer = slowPointer.next
+        fastPointer = fastPointer.next.next
+    }
 
-
+    return slowPointer
 }
 
-
-
-
-
-
-
-
-
 //DO NOT EDIT BELOW THIS LINE
-class Node{
-  constructor (val, next){
-    this.val = val
-    this.next = next
-  }
+class Node {
+    constructor(val, next) {
+        this.val = val
+        this.next = next
+    }
 }
 
 module.exports = middle;

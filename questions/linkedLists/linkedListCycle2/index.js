@@ -10,9 +10,17 @@
  * 
  */
 
- const listCycle = (head) => {
-
-
+const listCycle = (head) => {
+    let fastPointer = head
+    let slowPointer = head
+    while (fastPointer && fastPointer.next) {
+        slowPointer = slowPointer.next
+        fastPointer = fastPointer.next.next
+        if(slowPointer === fastPointer){
+            return true
+        }
+    }
+    return false
 }
 
 
