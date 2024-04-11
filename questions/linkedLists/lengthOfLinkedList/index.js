@@ -9,9 +9,16 @@
  * 
  */
 
- const lengthOfList = (head) => {
+const lengthOfList = (head) => {
+    let curr = head
+    let length = 0
 
+    while (curr) {
+        length++
+        curr = curr.next
+    }
 
+    return length
 }
 
 
