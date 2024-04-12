@@ -5,8 +5,18 @@
  * 
  */
 
- const breadthFirstSearch = (root) => {
+const breadthFirstSearch = (root) => {
+    const queue = [root]
+    const results = []
+    while (queue.length > 0) {
+        const current = queue.shift()
+        results.push(current.val)
+        
+        if(current.left!=null) queue.push(current.left)
+        if(current.right!=null) queue.push(current.right)
+    }
 
+    return results
 }
 
 

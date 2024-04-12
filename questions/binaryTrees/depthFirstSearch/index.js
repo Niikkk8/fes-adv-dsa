@@ -5,9 +5,21 @@
  * 
  */
 
- const depthFirstSearch = (root) => {
+const depthFirstSearch = (root) => {
+    const results = [];
 
-}
+    const traverse = (node) => {
+        if (node === null) return;
+        results.push(node.val);
+        traverse(node.left);
+        traverse(node.right);
+    };
 
+    traverse(root);
+
+    return results;
+};
+
+module.exports = depthFirstSearch;
 
 module.exports = depthFirstSearch;
